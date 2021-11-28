@@ -1,0 +1,6 @@
+Тесты запускаются командой
+
+mvn test -Dbrowser=chrome
+или
+mvn test -Dbrowser=edge
+
