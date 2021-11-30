@@ -1,6 +1,6 @@
 Тесты запускаются командой
 
-mvn test -Dbrowser=chrome
+mvn clean test -Dbrowser=Edge -Dlogin=nesterenkoav996@gmail.com -Dpassword=Q1w2e3r4
 или
-mvn test -Dbrowser=edge
+mvn clean test -Dbrowser=cHrome -Dlogin=nesterenkoav996@gmail.com -Dpassword=Q1w2e3r4
 

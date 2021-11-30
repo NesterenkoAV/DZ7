@@ -1,11 +1,12 @@
-package pages;
+package Dz7.Pages.MainPage;
 
+import Dz7.Pages.OtusTest.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class GoToPersonalAccount extends BasePage {
+public class OtusMainPage extends BasePage {
 
-    public GoToPersonalAccount(WebDriver driver) {
+    public OtusMainPage(WebDriver driver) {
         super(driver);
     }
 

@@ -1,4 +1,4 @@
-package pages.WDFactory;
+package Dz7.WDFactory;
 
 public enum Browsers {
     CHROME ("chrome"),

@@ -1,8 +1,9 @@
-package pages;
+package Dz7.Pages.PersonalAccount;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import Dz7.Pages.OtusTest.BasePage;
 
 public class AddPersonalDateArea extends BasePage {
 

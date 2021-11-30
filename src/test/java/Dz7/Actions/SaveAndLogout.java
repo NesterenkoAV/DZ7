@@ -1,11 +1,12 @@
-package pages;
+package Dz7.Actions;
 
+import Dz7.Pages.OtusTest.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SaveAndContinueAndLogout extends BasePage {
+public class SaveAndLogout extends BasePage {
 
-    public SaveAndContinueAndLogout(WebDriver driver) {
+    public SaveAndLogout(WebDriver driver) {
         super(driver);
     }
 
@@ -13,11 +14,11 @@ public class SaveAndContinueAndLogout extends BasePage {
     private By UserName = By.cssSelector("div[class*='item-wrapper__username']");
     private By Exit = By.cssSelector("a[title='Выход']");
 
-    public void ClickSaveAndContinue() {
+    public void clickSaveAndContinue() {
         driver.findElement(SaveAndContinue).click();
     }
 
-    public void ClickLogout() {
+    public void clickLogout() {
         driver.findElement(UserName).click();
         driver.findElement(Exit).click();
     }

@@ -1,11 +1,12 @@
-package pages;
+package Dz7.Pages.LoginPage;
 
+import Dz7.Pages.OtusTest.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class GoToUrlAndLogin extends BasePage {
+public class LoginPage extends BasePage {
 
-    public GoToUrlAndLogin(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 
@@ -21,10 +22,15 @@ public class GoToUrlAndLogin extends BasePage {
 
 
     public void enterAndReg() {
+
+        String login = System.getProperty("login");
+        String password = System.getProperty("password");
+
         driver.findElement(Enter).click();
-        driver.findElement(Login).sendKeys("nesterenkoav996@gmail.com");
-//        Thread.sleep(1000);
-        driver.findElement(Password).sendKeys("Q1w2e3r4");
+//        driver.findElement(Login).sendKeys("nesterenkoav996@gmail.com");
+        driver.findElement(Login).sendKeys(login);
+//        driver.findElement(Password).sendKeys("Q1w2e3r4");
+        driver.findElement(Password).sendKeys(password);
 
         //нажатие на кнопку "Вход и регистрация"
         driver.findElement(EnterButton).click();

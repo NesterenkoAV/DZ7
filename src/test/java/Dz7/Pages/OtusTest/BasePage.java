@@ -1,4 +1,4 @@
-package pages;
+package Dz7.Pages.OtusTest;
 
 import org.openqa.selenium.WebDriver;
 

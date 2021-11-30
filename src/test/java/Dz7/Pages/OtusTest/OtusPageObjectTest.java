@@ -1,8 +1,16 @@
-package pages;
+package Dz7.Pages.OtusTest;
 
+import Dz7.Actions.ClearAttributeValues;
+import Dz7.Actions.SaveAndLogout;
+import Dz7.Pages.MainPage.OtusMainPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
+import Dz7.Pages.LoginPage.LoginPage;
+import Dz7.Pages.PersonalAccount.AddBasicInformationArea;
+import Dz7.Pages.PersonalAccount.AddContactInformationArea;
+import Dz7.Pages.PersonalAccount.AddOtherArea;
+import Dz7.Pages.PersonalAccount.AddPersonalDateArea;
 
 
 public class OtusPageObjectTest extends BaseTest {
@@ -10,15 +18,15 @@ public class OtusPageObjectTest extends BaseTest {
 
 
     @Test
-    public void OtusPageObjectTest() throws InterruptedException {
-        GoToUrlAndLogin goToUrlAndLogin = new GoToUrlAndLogin(driver);
-        goToUrlAndLogin.openOtus();
+    public void otusPageObjectTest() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.openOtus();
         logger.info("Сайт открыт");
-        goToUrlAndLogin.enterAndReg();
+        loginPage.enterAndReg();
         logger.info("Авторизация завершена");
 
-        GoToPersonalAccount goToPersonalAccount = new GoToPersonalAccount(driver);
-        goToPersonalAccount.openPersonalAccount();
+        OtusMainPage otusMainPage = new OtusMainPage(driver);
+        otusMainPage.openPersonalAccount();
         logger.info("Открыт Личный кабинет");
 
         AddPersonalDateArea addPersonalDateArea = new AddPersonalDateArea(driver);
@@ -51,26 +59,26 @@ public class OtusPageObjectTest extends BaseTest {
         addOtherArea.addAppointment("тестировщик");
         logger.info("Заполнены атрибуты области 'Другое'");
 
-        SaveAndContinueAndLogout saveAndContinueAndLogout = new SaveAndContinueAndLogout(driver);
-        saveAndContinueAndLogout.ClickSaveAndContinue();
+        SaveAndLogout saveAndLogout = new SaveAndLogout(driver);
+        saveAndLogout.clickSaveAndContinue();
         logger.info("Вышли из личного кабинета");
-        saveAndContinueAndLogout.ClickLogout();
+        saveAndLogout.clickLogout();
 
-        goToUrlAndLogin.openOtus();
+        loginPage.openOtus();
         logger.info("Сайт открыт");
-        goToUrlAndLogin.enterAndReg();
+        loginPage.enterAndReg();
         logger.info("Авторизация завершена");
 
-        goToPersonalAccount.openPersonalAccount();
+        otusMainPage.openPersonalAccount();
         logger.info("Открыт Личный кабинет");
 
         ClearAttributeValues clearAttributeValues = new ClearAttributeValues(driver);
         clearAttributeValues.clearAttributeValues();
         logger.info("Значения атрибутов удалены");
 
-        saveAndContinueAndLogout.ClickSaveAndContinue();
+        saveAndLogout.clickSaveAndContinue();
         logger.info("Вышли из личного кабинета");
-        saveAndContinueAndLogout.ClickLogout();
+        saveAndLogout.clickLogout();
 
 
     }
