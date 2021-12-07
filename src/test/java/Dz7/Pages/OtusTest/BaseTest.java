@@ -24,11 +24,6 @@ public class BaseTest {
         String browserName = System.getProperty("browser").trim().toLowerCase();
         Browsers Name = Browsers.fetchValue(browserName);
         driver = WebDriverFactory.create(Name);
-
-//        String login = System.getProperty("login").trim().toLowerCase();
-////        Browsers Name = Browsers.fetchValue(browserName);
-//        driver = LoginPage.
-
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         logger.info("Драйвер поднят");

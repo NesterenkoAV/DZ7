@@ -3,14 +3,11 @@ package Dz7.Pages.OtusTest;
 import Dz7.Actions.ClearAttributeValues;
 import Dz7.Actions.SaveAndLogout;
 import Dz7.Pages.MainPage.OtusMainPage;
+import Dz7.Pages.PersonalAccount.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import Dz7.Pages.LoginPage.LoginPage;
-import Dz7.Pages.PersonalAccount.AddBasicInformationArea;
-import Dz7.Pages.PersonalAccount.AddContactInformationArea;
-import Dz7.Pages.PersonalAccount.AddOtherArea;
-import Dz7.Pages.PersonalAccount.AddPersonalDateArea;
 
 
 public class OtusPageObjectTest extends BaseTest {
@@ -55,7 +52,7 @@ public class OtusPageObjectTest extends BaseTest {
 
         AddOtherArea addOtherArea = new AddOtherArea(driver);
         addOtherArea.addMGender();
-        addOtherArea.addCompany("Test");
+        addOtherArea.addCompany("тест");
         addOtherArea.addAppointment("тестировщик");
         logger.info("Заполнены атрибуты области 'Другое'");
 
@@ -71,6 +68,10 @@ public class OtusPageObjectTest extends BaseTest {
 
         otusMainPage.openPersonalAccount();
         logger.info("Открыт Личный кабинет");
+
+        Assertions assertions = new Assertions(driver);
+        assertions.checkEnteredValues();
+        logger.info("Значения атрибутов корректно отображены");
 
         ClearAttributeValues clearAttributeValues = new ClearAttributeValues(driver);
         clearAttributeValues.clearAttributeValues();

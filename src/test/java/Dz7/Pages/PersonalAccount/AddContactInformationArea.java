@@ -17,10 +17,6 @@ public class AddContactInformationArea extends BasePage {
     private By CommunicationMethod2 = By.cssSelector("input[name='contact-1-service'] + div");
     private By WhatsAPP = By.cssSelector("div[data-num='1']>div>div>div>div>div>div>button+button+button+button+button+button+button+button");
     private By Contact2Number = By.cssSelector("input[id='id_contact-1-value']");
-    private By Gender = By.cssSelector("select[id='id_gender']");
-    private By GenderValue = By.cssSelector("option[value='m']");
-    private By Appointment = By.cssSelector("input[id='id_work']");
-    private By Company = By.cssSelector("input[id='id_company']");
 
     public void addCommunicationMethod1(String number) {
         driver.findElement(CommunicationMethod1).click();
@@ -37,19 +33,5 @@ public class AddContactInformationArea extends BasePage {
         driver.findElement(WhatsAPP).click();
         driver.findElement(Contact2Number).sendKeys(number2);
     }
-
-    public void addMGender() {
-        driver.findElement(Gender).click();
-        driver.findElement(GenderValue).click();
-    }
-
-    public void addAppointment(String appointment) {
-        driver.findElement(Appointment).sendKeys(appointment);
-    }
-
-    public void addCompany(String company) {
-        driver.findElement(Company).sendKeys(company);
-    }
-
 
 }
